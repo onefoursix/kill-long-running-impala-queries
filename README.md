@@ -30,36 +30,74 @@ Set the CM URL, Cluster Name, login and password in the settings below
 
 This script assumes there is only a single Impala service per cluster
 
-Here is an example with an artificially low query running time (60 seconds) used just as a demonstration:
+Here is an example with an artificially low query running time (30 seconds) used just as a demonstration:
 
-Listing queries that have run for more than 60 seconds:
+Listing queries that have run for more than 30 seconds:
 
-$ ./killLongRunningImpalaQueries.py  30
+    ./killLongRunningImpalaQueries.py  30 
 
     Connecting to Cloudera Manager at toronto.onefoursix.com:7180
     Located Impala Service: impala
     Looking for Impala queries running more than 30 seconds
     -- long running queries -------------
     queryState : CREATED
-    queryId: 4d420cb99e73ce11:a9e6c682a4543596
+    queryId: 5d4065b64f0faeb8:eec9dd65071c3c8a
     user: mark
-    startTime: 2015-11-07 23:25:17 
-    Query running time (seconds): 154
-    statement: select * from ratings
+    startTime: 2015-11-07 23:38:55 
+    query running time (seconds): 77
+    SQL: select * from ratings
     -------------------------------------
     queryState : CREATED
-    queryId: 624f2fbd95631f24:de221acfa5af4395
+    queryId: cf44fa531c01e450:19a74a9d0a2a8eb5
     user: mark
-    startTime: 2015-11-07 23:26:41 
-    Query running time (seconds): 70
-    statement: select * from ratings
+    startTime: 2015-11-07 23:38:57 
+    query running time (seconds): 75
+    SQL: select * from ratings
+    -------------------------------------
+    queryState : CREATED
+    queryId: 214af012c6e2bf39:7f8e7a888f03888c
+    user: mark
+    startTime: 2015-11-07 23:39:40 
+    query running time (seconds): 32
+    SQL: select * from ratings
     -------------------------------------
     done
 
 
+Killing queries that have run for more than 30 seconds:
 
-Killing queries that have run for more than 60 seconds:
+    $ ./killLongRunningImpalaQueries.py  30 KILL
 
+    Connecting to Cloudera Manager at toronto.onefoursix.com:7180
+    Located Impala Service: impala
+    Looking for Impala queries running more than 30 seconds
+    Queries will be killed
+    -- long running queries -------------
+    queryState : CREATED
+    queryId: 5d4065b64f0faeb8:eec9dd65071c3c8a
+    user: mark
+    startTime: 2015-11-07 23:38:55 
+    query running time (seconds): 87
+    SQL: select * from ratings
+    Attempting to kill query...
+    -------------------------------------
+    queryState : CREATED
+    queryId: cf44fa531c01e450:19a74a9d0a2a8eb5
+    user: mark
+    startTime: 2015-11-07 23:38:57 
+    query running time (seconds): 85
+    SQL: select * from ratings
+    Attempting to kill query...
+    -------------------------------------
+    queryState : CREATED
+    queryId: 214af012c6e2bf39:7f8e7a888f03888c
+    user: mark
+    startTime: 2015-11-07 23:39:40 
+    query running time (seconds): 42
+    SQL: select * from ratings
+    Attempting to kill query...
+    -------------------------------------
+    done
 
 
 
