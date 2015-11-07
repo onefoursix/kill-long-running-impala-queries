@@ -28,24 +28,23 @@
 ## ** imports *******************************
 
 import sys
-import pytz
 from datetime import datetime, timedelta
 from cm_api.api_client import ApiResource
 
 ## ** Settings ******************************
 
 ## Cloudera Manager Host
-cm_host = "toronto.onefoursix.com"
+cm_host = "YOUR_CM_HOST"
 cm_port = "7180"
 
 ## Cloudera Manager login with Full Administrator role
-cm_login = "admin"
+cm_login = "YOUR_CM_LOGIN"
 
 ## Cloudera Manager password
-cm_password = "admin"
+cm_password = "YOUR_CM_PASSWORD"
 
 ## Cluster Name
-cluster_name = "Cluster 1"
+cluster_name = "YOUR_CLUSTER_NAME"
 
 ## *****************************************
 
@@ -90,31 +89,22 @@ api = ApiResource(server_host=cm_host, server_port=cm_port, username=cm_login, p
 ## Get the Cluster 
 cluster = api.get_cluster(cluster_name)
 
-## Get cluster services
+## Get the IMPALA service
 service_list = cluster.get_all_services()
-
-## Look for an IMPALA Service
 for service in service_list:
   if service.type == "IMPALA":
     impala_service = service
     print "Located Impala Service: " + service.name
     
-
 if impala_service is None:
   print "Error: Could not locate Impala Service"
   quit(1)
 
-## Assumes queries have not been running more than 24 hours
+## A window of one day assumes queries have not been running more than 24 hours
 now = datetime.utcnow()
 start = now - timedelta(days=1)
 
-filterStr = 'queryDuration > ' + queryRunningSeconds + 's'
-
 print "Looking for Impala queries running more than " + str(queryRunningSeconds) + " seconds"
-
-
-# print "query filter start time: " + start.strftime(fmt) 
-# print "query filter end time: " + now.strftime(fmt)
 
 if kill:
   print "Queries will be killed"
@@ -144,6 +134,7 @@ for i in range (0, len(queries)):
     print "query running time (seconds): " + str(query_duration.seconds + query_duration.days * 86400)
 
     print "SQL: " + query.statement
+
     if kill:
       print "Attempting to kill query..."
       impala_service.cancel_impala_query(query.queryId)
