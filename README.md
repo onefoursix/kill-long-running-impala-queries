@@ -36,25 +36,25 @@ Listing queries that have run for more than 60 seconds:
 
 $ ./killLongRunningImpalaQueries.py  30
 
-<code>Connecting to Cloudera Manager at toronto.onefoursix.com:7180
-Located Impala Service: impala
-Looking for Impala queries running more than 30 seconds
--- long running queries -------------
-queryState : CREATED
-queryId: 4d420cb99e73ce11:a9e6c682a4543596
-user: mark
-startTime: 2015-11-07 23:25:17 
-Query running time (seconds): 154
-statement: select * from ratings
--------------------------------------
-queryState : CREATED
-queryId: 624f2fbd95631f24:de221acfa5af4395
-user: mark
-startTime: 2015-11-07 23:26:41 
-Query running time (seconds): 70
-statement: select * from ratings
--------------------------------------
-done<code>
+    Connecting to Cloudera Manager at toronto.onefoursix.com:7180
+    Located Impala Service: impala
+    Looking for Impala queries running more than 30 seconds
+    -- long running queries -------------
+    queryState : CREATED
+    queryId: 4d420cb99e73ce11:a9e6c682a4543596
+    user: mark
+    startTime: 2015-11-07 23:25:17 
+    Query running time (seconds): 154
+    statement: select * from ratings
+    -------------------------------------
+    queryState : CREATED
+    queryId: 624f2fbd95631f24:de221acfa5af4395
+    user: mark
+    startTime: 2015-11-07 23:26:41 
+    Query running time (seconds): 70
+    statement: select * from ratings
+    -------------------------------------
+    done
 
 
 
