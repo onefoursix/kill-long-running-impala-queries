@@ -20,8 +20,8 @@ Download the version of the CM API that matches the version of Cloudera Manager 
 Set <code>queryRunningSeconds</code> to the threshold considered "too long" for an Impala query to run, so that queries that have been running longer than that will be identifed as queries to be killed
 
 The second argument <code>KILL</code> is optional.
-Without this argument no queries will be killed. Instead a list of queries that are identified as running too long will just be printed to the console
-If the argument "KILL" is provided a cancel command will be issues for each selcted query 
+Without this argument, a list of queries that are identified as running too long will  be printed to the console, but no queries will be killed. 
+If the argument <code>KILL</code> is provided, a cancel command will be issues for each selcted query.  See [here](http://www.cloudera.com/content/www/en-us/documentation/enterprise/latest/topics/cm_dg_impala_queries.html) for info on cancelling Impala queries.
 
 CM versions <= 5.4 require Full Administrator role to cancel Impala queries 
 
