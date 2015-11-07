@@ -9,7 +9,7 @@ Info on the CM API is [here](http://cloudera.github.io/cm_api/)
 - Cloudera Manager 5.2 or higher (I tested with CM 5.4.8)  
 - CDH 5.2 or higher (I tested with CDH 5.4.8)
 - The version of the CM API that matches your CM version
-- A CM login with "Cluster Administrator" role is required to kill Impala queries
+- A CM login with "Full Administrator" role is currently required to kill Impala queries
 
 ####Install the Cloudera Manager API 
 Download the version of the CM API that matches the version of Cloudera Manager you are using. Consult the chart [here](http://cloudera.github.io/cm_api/docs/releases/) to see what version of the the API you will need to install
