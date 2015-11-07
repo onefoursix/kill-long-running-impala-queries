@@ -1,25 +1,15 @@
 kill-long-running-impala-queries
 ====================
 
-This project provides an example of using Cloudera Manager's Python API Client to create a Flume Service and Flume Agents, to set and update Flume Agent config files, and to restart Flume Agent processes. Along the way it also shows the use of Cloudera Manager's user roles
+This project provides an example of using Cloudera Manager's Python API Client to list and/or kill Impala queries that have been running longer than a user-defined time duration
 
-More information:  [Flume](http://archive.cloudera.com/cdh5/cdh/5/flume-ng/FlumeUserGuide.html),  [Cloudera Manager](http://www.cloudera.com/content/cloudera/en/products-and-services/cloudera-enterprise/cloudera-manager.html), [CM API Client](http://cloudera.github.io/cm_api/)
-
-
-
+Info on the CM API is [here](http://cloudera.github.io/cm_api/)
 
 ####Requirements
-- Cloudera Manager 5.2 or higher (I tested with CM 5.4.7)  
-- CDH 5.2 or higher (I tested with CDH 5.4.7)
-- A configured HDFS Service.
-- Python (I tested on CentOS 6.6 which includes Python 2.6.6)
-- Python setuptools (see below)
-- The correct version of the CM API (see below)
-- A CM login with at least "Cluster Administrator" role to create a Flume Service
-- A CM login with at least "Cluster Administrator" role to add Agents to a Flume Service 
-- A CM login with at least "Configurator" role to deploy an Agent's config file
-- A CM login with at least "Operator" role to start or restart Agent(s)
-
+- Cloudera Manager 5.2 or higher (I tested with CM 5.4.8)  
+- CDH 5.2 or higher (I tested with CDH 5.4.8)
+- The version of the CM API that matches your CM version
+- A CM login with "Cluster Administrator" role is required to kill Impala queries
 
 ####Install the Cloudera Manager API 
 Download the version of the CM API that matches the version of Cloudera Manager you are using. Consult the chart [here](http://cloudera.github.io/cm_api/docs/releases/) to see what version of the the API you will need to install
