@@ -37,7 +37,7 @@ This script assumes there is only a single Impala service per cluster
 
 Here is an example with an artificially low query running time (30 seconds) used just as a demonstration:
 
-Listing queries that have run for more than 30 seconds:
+List queries that have run for more than 30 seconds:
 
     ./killLongRunningImpalaQueries.py  30 
 
@@ -69,7 +69,7 @@ Listing queries that have run for more than 30 seconds:
     done
 
 
-Killing queries that have run for more than 30 seconds:
+Kill queries that have run for more than 30 seconds:
 
     $ ./killLongRunningImpalaQueries.py  30 KILL
 
