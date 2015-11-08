@@ -132,7 +132,6 @@ for i in range (0, len(queries)):
     print "startTime: " + query.startTime.strftime(fmt)
     query_duration = now - query.startTime
     print "query running time (seconds): " + str(query_duration.seconds + query_duration.days * 86400)
-
     print "SQL: " + query.statement
 
     if kill:
