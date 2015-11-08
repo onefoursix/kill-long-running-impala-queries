@@ -5,7 +5,7 @@ Cloudera Manager's Impala Queries page allows Impala queries to be monitored, ma
 
 ![](images/cm-impala-queries.png)
 
-This script provides an example of using Cloudera Manager's Python API Client to programmatically list and/or kill Impala queries that have been running longer than a user-defined time. It may be useful in shops where poorly formed queries run for too long and consume too many cluster resources and an automated solution for killing such queries is desired.
+This script provides an example of using Cloudera Manager's Python API Client to programmatically list and/or kill Impala queries that have been running longer than a user-defined threshold. It may be useful in shops where poorly formed queries run for too long and consume too many cluster resources and an automated solution for killing such queries is desired.
 
 Info on the CM API is [here](http://cloudera.github.io/cm_api/)
 
