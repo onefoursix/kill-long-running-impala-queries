@@ -95,7 +95,8 @@ for service in service_list:
   if service.type == "IMPALA":
     impala_service = service
     print "Located Impala Service: " + service.name
-    
+    break
+  
 if impala_service is None:
   print "Error: Could not locate Impala Service"
   quit(1)
