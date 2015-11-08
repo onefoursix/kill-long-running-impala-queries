@@ -17,7 +17,7 @@ Info on the CM API is [here](http://cloudera.github.io/cm_api/)
 - Python 2.6+
 
 ####Install the Cloudera Manager API 
-Download the version of the CM API that matches the version of Cloudera Manager you are using. Consult the chart [here](http://cloudera.github.io/cm_api/docs/releases/) to see what version of the the API you will need to install
+Install the version of the CM API that matches the version of Cloudera Manager you are using. Consult the chart [here](http://cloudera.github.io/cm_api/docs/releases/) to see what version of the the API you will need to install
 
 ####Usage: 
     ./killLongRunningImpalaQueries.py  queryRunningSeconds [KILL]
